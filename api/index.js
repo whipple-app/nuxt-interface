@@ -7,7 +7,11 @@ require('dotenv').config();
 app.use(bodyParser.urlencoded({ extended: false }))
 
 app.get("/", function(req, res) {
-  if (!req.query) res.send("Authing");
+  console.log(req.query.code);
+  if (!req.query.code) {
+    res.send("Authing")
+    return
+  };
 
   const discordQuery = {
     uri: 'https://discordapp.com/api/oauth2/token',
