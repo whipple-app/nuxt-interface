@@ -14,7 +14,7 @@ app.get("/", async function(req, res) {
 
   const discordQuery = {
     method: 'POST',
-    uri: `${process.env.API_URI}oauth2/token`,
+    uri: 'https://discordapp.com/api/v6/',
     transform: (body, response, resolveWithFullResponse) => {
       return response
     },
