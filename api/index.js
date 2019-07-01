@@ -19,13 +19,17 @@ app.get("/", function(req, res) {
       return response
     },
 
-    headers: {
+    body: {
       'client_id': process.env.WHIPPLE_CLIENT_ID,
       'client_secret': process.env.WHIPPLE_CLIENT_SECRET,
       'grant_type': 'authorization_code',
       'code': req.query.code,
       'redirect_uri': process.env.REDIRECT_URI,
-      'scope': 'identify email connections'
+      'scope': 'identify email connections',
+    },
+
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
     },
     json: true
   };
@@ -36,6 +40,6 @@ app.get("/", function(req, res) {
 });
 
 module.exports = {
-path: "/api/login",
-handler: app
+  path: "/api/login",
+  handler: app
 };
