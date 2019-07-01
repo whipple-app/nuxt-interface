@@ -10,7 +10,7 @@ app.get("/", function(req, res) {
   if (!req.query) res.send("Authing");
 
   const discordQuery = {
-    uri: 'https://radiko.jp/v2/api/auth1',
+    uri: 'https://discordapp.com/api/oauth2/token',
     transform: (body, response, resolveWithFullResponse) => {
       return response
     },
