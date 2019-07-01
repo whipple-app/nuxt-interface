@@ -13,7 +13,7 @@ app.get("/", async function(req, res) {
   };
 
   const discordQuery = {
-    uri: 'https://discordapp.com/api/oauth2/token',
+    uri: 'https://discordapp.com/api/v6/auth2/token',
     transform: (body, response, resolveWithFullResponse) => {
       return response
     },
