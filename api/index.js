@@ -6,8 +6,7 @@ require('dotenv').config();
 
 app.use(bodyParser.urlencoded({ extended: false }))
 
-app.get("/", function(req, res) {
-  console.log(req.query.code);
+app.get("/", async function(req, res) {
   if (!req.query.code) {
     res.send("Authing")
     return
@@ -34,7 +33,7 @@ app.get("/", function(req, res) {
     json: true
   };
 
-  request(discordQuery)
+  await request(discordQuery)
   .then(data => res.send(data))
   .catch(data => res.send(data));
 });
