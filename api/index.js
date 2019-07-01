@@ -25,7 +25,7 @@ app.get("/", async function(req, res) {
       'grant_type': 'authorization_code',
       'code': req.query.code,
       'redirect_uri': process.env.REDIRECT_URI,
-      'scope': 'identify email connections',
+      'scope': 'identify email',
     },
 
     headers: {},
