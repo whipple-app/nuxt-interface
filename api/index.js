@@ -26,6 +26,9 @@ app.get("/", async function(req, res) {
       'redirect_uri': process.env.REDIRECT_URI,
       'scope': 'identify email',
     },
+    header: {
+
+    },
     json: true
   };
 
