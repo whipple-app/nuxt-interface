@@ -8,17 +8,16 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 app.get("/", async function(req, res) {
   if (!req.query.code) {
-    res.send("Authing")
+    res.redirect('/');
     return
   };
 
   const discordQuery = {
     method: 'POST',
-    uri: 'https://discordapp.com/api/v6/',
+    uri: process.env.API_URI,
     transform: (body, response, resolveWithFullResponse) => {
       return response
     },
-
     body: {
       'client_id': process.env.WHIPPLE_CLIENT_ID,
       'client_secret': process.env.WHIPPLE_CLIENT_SECRET,
@@ -27,8 +26,6 @@ app.get("/", async function(req, res) {
       'redirect_uri': process.env.REDIRECT_URI,
       'scope': 'identify email',
     },
-
-    headers: {},
     json: true
   };
 
