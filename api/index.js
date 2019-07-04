@@ -12,6 +12,8 @@ app.get("/", async function(req, res) {
     return
   };
 
+  console.log(req.query.code);
+
   const discordQuery = {
     method: 'POST',
     uri: process.env.API_URI,

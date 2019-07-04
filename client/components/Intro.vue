@@ -45,7 +45,7 @@ export default {
         position: relative;
         color: #fafafa;
         font-size: 30px;
-        letter-spacing: 2px;
+        letter-spacing: 3px;
         animation: disappear .5s ease forwards;
         animation-delay: 6s;
 
@@ -79,6 +79,7 @@ export default {
         span {
           display: inline-block;
           transform: rotateX(90deg);
+          font-weight: 500;
           animation: spinIn .2s ease forwards;
 
           &:nth-child(1) {
@@ -160,7 +161,7 @@ export default {
         .floating-button {
           position: relative;
           box-sizing: border-box;
-          padding: 8px 12px;
+          padding: 5px 15px;
           border-radius: 5px;
           color: #fafafa;
           background-color: #23272A;
