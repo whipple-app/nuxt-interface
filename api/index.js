@@ -23,7 +23,7 @@ app.get("/", async function(req, res) {
     body: {
       'client_id': process.env.WHIPPLE_CLIENT_ID,
       'client_secret': process.env.WHIPPLE_CLIENT_SECRET,
-      'grant_type': 'authorization_code',
+      'grant_type': 'client_credentials',
       'code': req.query.code,
       'redirect_uri': process.env.REDIRECT_URI,
       'scope': 'identify email',
