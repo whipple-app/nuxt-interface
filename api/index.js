@@ -27,7 +27,7 @@ app.get("/", async function(req, res) {
       'scope': 'identify email',
     },
     header: {
-
+      'Content-Type': 'application/x-www-form-urlencoded'
     },
     json: true
   };
